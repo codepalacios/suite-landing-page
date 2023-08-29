@@ -1,0 +1,241 @@
+// Colors
+$yankees-blue: #172339;
+$independence: #49566d;
+$alabaster: #f3ede7;
+$cultured: #faf8f6;
+$lavender-indigo: #a060ff;
+$steel-pink: #cb30e3;
+$pastel-orange: #ffa84e;
+
+// Mixin
+@mixin flex($content, $align) {
+  display: flex;
+  justify-content: $content;
+  align-items: $align;
+}
+
+// Reset styles
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-family: "Epilogue", sans-serif;
+}
+a,
+img {
+  display: block;
+}
+
+// Mobile styles
+body {
+  position: relative;
+  min-width: 20rem;
+}
+
+header {
+  margin: 0 auto;
+  padding: 1.5rem 16px 0;
+  @include flex(space-between, center);
+  img {
+    max-width: 5.0625rem;
+    min-height: 2rem;
+  }
+  a {
+    min-width: 11.375rem;
+    min-height: 3rem;
+    border-radius: 6px;
+    border: 1px solid $yankees-blue;
+    text-decoration: none;
+    color: $yankees-blue;
+    font-size: 0.875rem;
+    font-weight: 700;
+    line-height: 1.5rem;
+    letter-spacing: -0.0088rem;
+    @include flex(center, center);
+  }
+}
+
+main {
+  display: grid;
+  gap: 14.8125rem;
+  margin-top: 3.5rem;
+  padding-bottom: 17.875rem;
+  .container-suite {
+    padding: 0 16px;
+    display: grid;
+    .business {
+      .business__info {
+        background-image: url("../assets/pattern-curved-line-1.svg");
+        background-repeat: no-repeat;
+        background-size: 9.4375rem 1.1875rem;
+        background-position: top right 2.3456rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        h1 {
+          margin: 1.7075rem 0 0;
+          color: $yankees-blue;
+          font-size: 2.375rem;
+          font-weight: 400;
+          line-height: 2.75rem;
+          letter-spacing: -0.528px;
+          span {
+            font-weight: 700;
+          }
+        }
+        p {
+          color: $independence;
+          font-size: 1rem;
+          font-weight: 400;
+          line-height: 1.75rem;
+          letter-spacing: 0.089px;
+        }
+        a {
+          max-width: 16rem;
+          min-height: 3.8125rem;
+          background-color: $yankees-blue;
+          border-radius: 6px;
+          color: $cultured;
+          font-size: 1.125rem;
+          font-weight: 700;
+          line-height: 2rem;
+          letter-spacing: -0.18px;
+          text-decoration: none;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+      picture {
+        img {
+          width: 100%;
+          margin: 3.48rem 0 3.5rem;
+        }
+      }
+    }
+    .about-suite {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      p {
+        text-align: center;
+        color: $independence;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.625rem;
+        letter-spacing: 2.5px;
+        text-transform: uppercase;
+        span {
+          display: block;
+          color: $yankees-blue;
+          font-size: 3rem;
+          font-weight: 700;
+          line-height: 3.5rem;
+        }
+      }
+    }
+  }
+
+  .container-info {
+    display: grid;
+    padding: 0 16px 4rem;
+    background-color: $yankees-blue;
+    border-radius: 15px;
+    background-image: url("../assets/pattern-curved-line-2.svg");
+    background-repeat: no-repeat;
+    background-size: 3.0812rem 2.5rem;
+    background-position: top 16.3125rem center;
+    picture {
+      max-height: 21.125rem;
+      background-image: url("../assets/pattern-blur.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: top -50px center;
+      img {
+        margin: 0 auto;
+        width: 15.75rem;
+        height: 25.125rem;
+        position: relative;
+        top: -11.3125rem;
+      }
+    }
+    div {
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+      text-align: center;
+      h2 {
+        color: $cultured;
+        font-size: 2.5rem;
+        font-weight: 400;
+        line-height: 3rem;
+        letter-spacing: -0.417px;
+        span {
+          font-weight: 700;
+        }
+      }
+      p {
+        color: $alabaster;
+        font-size: 1.125rem;
+        font-weight: 400;
+        line-height: 2rem;
+        letter-spacing: 0.09px;
+      }
+      .container-info__user {
+        color: $alabaster;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.625rem;
+        letter-spacing: 2.5px;
+        span {
+          color: $cultured;
+          font-size: 1.125rem;
+          font-weight: 700;
+          line-height: 2rem;
+          letter-spacing: -0.18px;
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  z-index: -1;
+  background-color: $alabaster;
+  min-width: 100%;
+  min-height: 26.25rem;
+  padding-top: 11.875rem;
+  div {
+    max-width: 7.8125rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2.0625rem;
+    align-items: center;
+    .logo-suite {
+      max-width: 5.0625rem;
+      min-height: 2rem;
+    }
+    p {
+      color: $independence;
+      font-size: 0.9375rem;
+      font-weight: 400;
+      line-height: 2rem;
+      letter-spacing: 0.0052rem;
+      text-align: center;
+    }
+    .social-networks {
+      flex-direction: row;
+      gap: 1.75rem;
+      max-width: 7.25rem;
+      max-height: 20px;
+    }
+  }
+}
