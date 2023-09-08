@@ -37,7 +37,6 @@ body {
 }
 
 header {
-  margin: 0 auto;
   padding: 1.5rem 16px 0;
   @include flex(space-between, center);
   img {
@@ -54,8 +53,14 @@ header {
     font-size: 0.875rem;
     font-weight: 700;
     line-height: 1.5rem;
-    letter-spacing: -0.0088rem;
+    letter-spacing: -0.14px;
     @include flex(center, center);
+    &:hover {
+      border: 1px solid $yankees-blue;
+      background-color: $yankees-blue;
+      color: $cultured;
+      transition: 0.5s;
+    }
   }
 }
 
@@ -63,57 +68,61 @@ main {
   display: grid;
   gap: 14.8125rem;
   margin-top: 3.5rem;
-  padding-bottom: 17.875rem;
   .container-suite {
     padding: 0 16px;
     display: grid;
     .business {
-      .business__info {
-        background-image: url("../assets/pattern-curved-line-1.svg");
-        background-repeat: no-repeat;
-        background-size: 9.4375rem 1.1875rem;
-        background-position: top right 2.3456rem;
-        display: flex;
-        flex-direction: column;
-        gap: 2rem;
-        h1 {
-          margin: 1.7075rem 0 0;
-          color: $yankees-blue;
-          font-size: 2.375rem;
-          font-weight: 400;
-          line-height: 2.75rem;
-          letter-spacing: -0.528px;
-          span {
-            font-weight: 700;
-          }
-        }
-        p {
-          color: $independence;
-          font-size: 1rem;
-          font-weight: 400;
-          line-height: 1.75rem;
-          letter-spacing: 0.089px;
-        }
-        a {
-          max-width: 16rem;
-          min-height: 3.8125rem;
-          background-color: $yankees-blue;
-          border-radius: 6px;
-          color: $cultured;
-          font-size: 1.125rem;
+      background-image: url("../assets/pattern-curved-line-1.svg");
+      background-repeat: no-repeat;
+      background-size: 9.4375rem 1.1875rem;
+      background-position: top right 2.3456rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      h1 {
+        margin: 1.7075rem 0 0;
+        color: $yankees-blue;
+        font-size: 2.375rem;
+        font-weight: 400;
+        line-height: 2.75rem;
+        letter-spacing: -0.528px;
+        span {
           font-weight: 700;
-          line-height: 2rem;
-          letter-spacing: -0.18px;
-          text-decoration: none;
-          display: flex;
-          justify-content: center;
-          align-items: center;
+        }
+      }
+      p {
+        color: $independence;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.75rem;
+        letter-spacing: 0.089px;
+      }
+      a {
+        max-width: 16rem;
+        min-height: 3.8125rem;
+        background-color: $yankees-blue;
+        border-radius: 6px;
+        color: $cultured;
+        font-size: 1.125rem;
+        font-weight: 700;
+        line-height: 2rem;
+        letter-spacing: -0.18px;
+        text-decoration: none;
+        @include flex(center, center);
+        &:hover {
+          background: linear-gradient(
+            135deg,
+            $lavender-indigo 0%,
+            $steel-pink 49.21%,
+            $pastel-orange 100%
+          );
+          transition: 0.5s;
         }
       }
       picture {
         img {
           width: 100%;
-          margin: 3.48rem 0 3.5rem;
+          margin: 1.48rem 0 3.5rem;
         }
       }
     }
@@ -154,7 +163,7 @@ main {
       background-image: url("../assets/pattern-blur.svg");
       background-repeat: no-repeat;
       background-size: contain;
-      background-position: top -50px center;
+      background-position: top -3.125rem center;
       img {
         margin: 0 auto;
         width: 15.75rem;
@@ -212,6 +221,7 @@ footer {
   min-width: 100%;
   min-height: 26.25rem;
   padding-top: 11.875rem;
+  transform: translateY(17.875rem);
   div {
     max-width: 7.8125rem;
     margin: 0 auto;
@@ -228,14 +238,241 @@ footer {
       font-size: 0.9375rem;
       font-weight: 400;
       line-height: 2rem;
-      letter-spacing: 0.0052rem;
+      letter-spacing: 0.083px;
       text-align: center;
     }
     .social-networks {
+      margin: 0;
       flex-direction: row;
-      gap: 1.75rem;
-      max-width: 7.25rem;
+      gap: 0;
+      justify-content: space-between;
+      min-width: 7.25rem;
       max-height: 20px;
+      img {
+        &:hover {
+          cursor: pointer;
+          filter: invert(54%) sepia(6%) saturate(380%) hue-rotate(186deg)
+            brightness(97%) contrast(88%);
+        }
+        transition: 0.5s;
+      }
+    }
+  }
+}
+
+// Tablet styles
+@media screen and (min-width: 426px) {
+  header {
+    padding: 2.5rem 40px 0;
+    a {
+      min-width: 13.6875rem;
+      min-height: 3.5rem;
+      font-size: 1rem;
+      line-height: 2rem;
+      letter-spacing: -0.16px;
+    }
+  }
+
+  main {
+    margin-top: 5rem;
+    gap: 17.0625rem;
+    .container-suite {
+      padding: 0 40px;
+      gap: 5.5rem;
+      .business {
+        min-height: 27.4575rem;
+        margin-top: 2.6675rem;
+        background-size: 14.4375rem 1.8125rem;
+        background-position: top center;
+        gap: 2.5rem;
+        h1 {
+          margin-top: 2.8325rem;
+          font-size: 3.5rem;
+          line-height: 4rem;
+          letter-spacing: -0.778px;
+        }
+        p {
+          max-width: 21.875rem;
+        }
+        picture {
+          img {
+            margin: 0;
+          }
+        }
+      }
+      .about-suite {
+        flex-direction: row;
+        gap: 0.625rem;
+        justify-content: space-between;
+        p {
+          width: 100%;
+          min-height: 5.1875rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 566px) {
+  main {
+    .container-suite {
+      .business {
+        position: relative;
+        picture {
+          position: absolute;
+          z-index: -1;
+          top: -2.6675rem;
+          right: 0;
+          img {
+            max-width: 17.5625rem;
+            max-height: 30.125rem;
+          }
+        }
+      }
+    }
+
+    .container-info {
+      margin: 0 40px;
+      padding: 0 58px 4rem;
+    }
+  }
+
+  footer {
+    min-height: 40rem;
+    padding: 33.5rem 40px 0;
+    transform: translateY(11rem);
+    div {
+      max-width: 100%;
+      flex-direction: row;
+      gap: 0;
+      justify-content: space-between;
+      .social-networks {
+        margin: 0;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 760px) {
+  main {
+    .container-suite {
+      .business {
+        background-position: top left 13.9375rem;
+      }
+    }
+  }
+}
+
+// Desktop styles
+@media screen and (min-width: 769px) {
+  main {
+    .container-suite {
+      grid-template-columns: auto auto;
+      gap: 0;
+      .about-suite {
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+        gap: 3.9375rem;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1150px) {
+  header {
+    padding: 3.125rem 40px 0;
+    max-width: 74.375rem;
+    margin: 0 auto;
+    img {
+      max-width: 4.9009rem;
+      min-height: 1.55rem;
+    }
+  }
+
+  main {
+    max-width: 74.375rem;
+    margin: 4.1875rem auto 0;
+    padding: 0 40px;
+    gap: 12.4375rem;
+    .container-suite {
+      padding: 0;
+      min-height: 37.5rem;
+      grid-template-columns: minmax(auto, 51.5rem) minmax(12.5rem, auto);
+      .business {
+        margin-top: 2.855rem;
+        background-size: 17.9375rem 2.25rem;
+        background-position: top left 18.0625rem;
+        h1 {
+          margin-top: 3.5825rem;
+          font-feature-settings: "clig" off, "liga" off;
+          font-size: 4.5rem;
+          line-height: 4.875rem;
+          letter-spacing: -1px;
+        }
+        p {
+          font-feature-settings: "clig" off, "liga" off;
+          font-size: 1.125rem;
+          line-height: 2rem;
+          letter-spacing: 0.01px;
+        }
+        picture {
+          top: -2.855rem;
+          img {
+            max-width: 21.875rem;
+            max-height: 37.5rem;
+          }
+        }
+      }
+      .about-suite {
+        p {
+          max-width: 11.875rem;
+          text-align: start;
+        }
+      }
+    }
+
+    .container-info {
+      margin: 0;
+      padding: 0;
+      min-height: 34.0625rem;
+      grid-template-columns: 1fr 1fr;
+      background-size: 4.0031rem 3.25rem;
+      background-position: top 10.0719rem center;
+      picture {
+        max-height: 34.0625rem;
+        background-position: bottom -2.5625rem center;
+        align-self: end;
+        img {
+          width: 22.4881rem;
+          height: 36.8473rem;
+          top: -2.785rem;
+        }
+      }
+      div {
+        padding: 5.5rem 125px 5.5rem 80px;
+        font-feature-settings: "clig" off, "liga" off;
+        text-align: left;
+        h2 {
+          font-size: 3rem;
+          line-height: 3.5rem;
+          letter-spacing: -0.5px;
+        }
+        p {
+          font-size: 1.25rem;
+          line-height: 2.1875rem;
+          letter-spacing: 0.1px;
+        }
+      }
+    }
+  }
+
+  footer {
+    transform: translateY(12.4375rem);
+    min-height: 29rem;
+    padding: 22.5rem 40px 0;
+    div {
+      max-width: 69.375rem;
     }
   }
 }
