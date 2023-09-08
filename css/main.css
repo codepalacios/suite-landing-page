@@ -18,6 +18,7 @@ img {
 body {
   position: relative;
   min-width: 20rem;
+  background-color: #faf8f6;
 }
 
 header {
